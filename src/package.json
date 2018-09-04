@@ -1,0 +1,14 @@
+{
+  "name": "nginx-proxy",
+  "version": "1.0.0",
+  "description": "nginx-proxy",
+  "main": "index.js",
+  "author": "Jesús Urrutia <jesus.urrutia@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

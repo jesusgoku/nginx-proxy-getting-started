@@ -1,0 +1,24 @@
+version: '3'
+services:
+  # docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro jwilder/nginx-proxy
+  proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - '8000:80'
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+  jesus:
+    build: src/
+    environment:
+      - PORT=80
+      - VIRTUAL_HOST=jesusurrutia.cl
+  angelito:
+    build: src/
+    environment:
+      - PORT=80
+      - VIRTUAL_HOST=angelito.cl
+  whoami:
+      image: jwilder/whoami
+      container_name: whoami
+      environment:
+        - VIRTUAL_HOST=whoami.cl
